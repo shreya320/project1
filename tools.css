@@ -1,0 +1,259 @@
+/* Make entire page a flex column layout */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #eaf4f9;
+
+}
+
+/* Let main content take available space */
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem;
+  flex: 1;
+}
+
+/* Header */
+.header {
+  background-color: #eaf4f9;
+  padding: 2rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1800px;
+  padding: 0 2.5rem;
+}
+
+.nav-center {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: black;
+    font-family: "Poppins", sans-serif;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  height: 28px;
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 2px;
+  background-color: black;
+  width: 100%;
+  border-radius: 1px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 350px;
+  height: 100vh;
+  background-color: #dceff9;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  padding-top: 6rem;
+  transition: right 0.3s ease;
+  z-index: 1002;
+  font-family: "Poppins", sans-serif;
+}
+
+.show-sidebar {
+  right: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: black;
+
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.sidebar li {
+  padding: 1rem 5rem;
+  font-size: 1.3rem;
+}
+
+.sidebar li a {
+  color: black;
+  text-decoration: none;
+}
+
+.sidebar li a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #000;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+/* Upload Section */
+.tool-section {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.section-title {
+  font-family: "Karla", sans-serif;
+  font-size:5rem;
+  color: #333;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+.section-subtext {
+  font-family: "Poppins", sans-serif;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.upload-box {
+  margin-top: 1rem;
+}
+
+.upload-btn {
+  padding: 0.8rem 2rem;
+  background-color: #1a2020;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.upload-btn:hover {
+  transform: scale(1.05);
+}
+
+.file-limit {
+  margin-top: 0.75rem;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.coming-next {
+  margin-top: 4rem;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+}
+
+.coming-next h4 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.coming-next ul {
+  list-style: none;
+  padding: 0;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Footer */
+.footer {
+  background-color: #eaf4f9;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  max-width: 1800px;
+  }
+
+.footer-content {
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #0077b6;
+}

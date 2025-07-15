@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoughSense</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Libre+Barcode+39+Extended+Text&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="navbar">
+            <a href="#" class="logo-group">
+                <img src="img.png" alt="logo" class="logo" />
+                <span class="brand">CoughSense</span>
+            </a>
+            <div class="nav-center">Explore</div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <div class="close-btn" id="close-btn">&times;</div>
+            <ul>
+                <li><a href="#">Welcome</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Testing</a></li>
+                <li><a href="#">Members</a></li>
+            </ul>
+        </div>
+        <hr />
+    </header>
+
+    <main class="container">
+        <section class="analyze-row">
+            <h1 class="barcode-title">ANALYZE YOUR COUGH</h1>
+            <div class="analyze-content">
+                <p>Get personalized cough analyses tailored to your needs.</p>
+                <a href="#" class="get-started">Get Started</a>
+            </div>
+        </section>
+
+        <section class="hero">
+            <h1 class="main-title">CoughSense</h1>
+            <div class="subtitle-container">
+                <p class="subtitle">Smart Cough Detection & Health Insights</p>
+                </br>
+                <p class="description">CoughSense leverages advanced audio analysis and machine learning to identify patterns in cough sounds, drawing insights from COVID-related data. Designed to promote awareness, support education, and enhance understanding of respiratory health.</p>
+            </div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; 2025 CoughSense. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Privacy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </main>
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const sidebar = document.getElementById("sidebar");
+        const closeBtn = document.getElementById("close-btn");
+
+        hamburger.addEventListener("click", () => {
+            sidebar.classList.add("show-sidebar");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.remove("show-sidebar");
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+                sidebar.classList.remove("show-sidebar");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

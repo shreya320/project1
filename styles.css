@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9fafc;
+  color: #1a1a1a;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 100px 24px;
+  position: relative;
+}
+
+section::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #f9fafc, transparent);
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  z-index: -1;
+}
+
+/* Header */
+header {
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-content img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.header-content h1 {
+  font-size: 28px;
+  color: #0a7d7d;
+  font-weight: 700;
+}
+
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to bottom right, #e0f7fa, #f0fcff);
+  padding: 100px 0 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero .text {
+  flex: 1;
+  padding: 20px;
+  min-width: 320px;
+}
+
+.hero h2 {
+  font-size: 46px;
+  margin-bottom: 20px;
+  color: #004d40;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #444;
+  max-width: 600px;
+}
+
+.hero .image {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  min-width: 320px;
+}
+
+.hero img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+/* Section Headings */
+section h3 {
+  font-size: 32px;
+  text-align: center;
+  color: #00796b;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+section h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #00bfa5;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* How it Works */
+.how-it-works {
+  background: #f7fbff;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.step {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.step h4 {
+  font-size: 22px;
+  color: #00796b;
+  margin-bottom: 12px;
+}
+
+.step p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Call to Action */
+.start {
+  background: #e0f2f1;
+  text-align: center;
+}
+
+.start h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #004d40;
+}
+
+.start button {
+  background: #00796b;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.start button:hover {
+  background: #004d40;
+  transform: scale(1.03);
+}
+
+/* Extras */
+.advantages, .privacy, .stats, .story, .map {
+  background: #ffffff;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.advantages ul {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.advantages li {
+  margin: 12px 0;
+  position: relative;
+  padding-left: 24px;
+}
+
+.advantages li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #00c853;
+  font-weight: bold;
+}
+
+.map iframe {
+  border: 0;
+  border-radius: 12px;
+  width: 100%;
+  height: 300px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* Footer */
+footer {
+  background: #fafafa;
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero .image {
+    order: -1;
+  }
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+}
