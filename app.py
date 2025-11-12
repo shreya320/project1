@@ -41,7 +41,7 @@ print("Model output shape:", model.output_shape)
 
 
 # -----------------------------
-# Feature Extraction Function (updated for CNN input)
+# Feature Extraction Function 
 # -----------------------------
 def extract_features(file_path):
     try:
@@ -84,7 +84,7 @@ def extract_features(file_path):
 
 
 # -----------------------------
-# Serve your frontend (tool.html)
+# Serve your frontend
 # -----------------------------
 @app.route('/')
 def home():
