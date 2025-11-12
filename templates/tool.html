@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyze Cough | CoughSense</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='tools.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="background-image">
+    <div class="background-animation">
+      <div class="bubble-container">
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+      </div>
+
+
+      <header class="header">
+        <div class="navbar">
+          <a href="#" class="logo-group">
+            <img src="{{ url_for('static', filename='img.png') }}" alt="logo" class="logo" />
+            <span class="brand">CoughSense</span>
+          </a>
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+          <div class="close-btn" id="close-btn">&times;</div>
+          <ul>
+            <li><a href="#">Welcome</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Testing</a></li>
+            <li><a href="#">Members</a></li>
+          </ul>
+        </div>
+        <hr />
+      </header>
+
+      <main class="container">
+        <section class="tool-section">
+          <h3 class="section-title">Upload Your Cough Audio</h3>
+          <p class="section-subtext">
+            This tool allows you to upload a cough audio clip (WAV or MP3). We will analyze it and highlight potential
+            respiratory patterns related to COVID-19, purely for educational and exploratory use.
+          </p>
+
+          <div class="upload-box">
+            <input type="file" id="audioFile" accept=".wav,.mp3" style="display: none;" />
+            <button class="upload-btn" id="uploadBtn">Upload Audio</button>
+            <p class="file-limit">Max file size: 10MB</p>
+            <div id="result" style="margin-top:15px; font-weight:600;"></div>
+          </div>
+
+
+          <div class="coming-next">
+            <h4>Coming Next:</h4>
+            <ul>
+              <li>🎧 Real-time playback</li>
+              <li>📊 Visual waveform and spectrogram</li>
+              <li>📈 Risk indicator with explanations</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <hr>
+          <p>&copy; 2025 CoughSense. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const sidebar = document.getElementById("sidebar");
+    const closeBtn = document.getElementById("close-btn");
+
+    hamburger.addEventListener("click", () => {
+      sidebar.classList.add("show-sidebar");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.remove("show-sidebar");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+        sidebar.classList.remove("show-sidebar");
+      }
+    });
+
+    document.getElementById("uploadBtn").addEventListener("click", () => {
+      document.getElementById("audioFile").click();
+    });
+
+    document.getElementById("audioFile").addEventListener("change", async function () {
+      const file = this.files[0];
+      if (!file) return;
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "Analyzing cough... ⏳";
+
+      try {
+        const response = await fetch("http://127.0.0.1:5000/predict", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+        resultDiv.innerHTML = `Prediction: <span style="color:#0a9396;">${data.prediction}</span>`;
+      } catch (error) {
+        resultDiv.innerHTML = "Error analyzing file.";
+        console.error(error);
+      }
+    });
+  </script>
+
+
+</body>
+
+</html>

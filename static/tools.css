@@ -3,14 +3,20 @@ html,
 body {
   height: 100%;
   margin: 0;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
-  background-color: #eaf4f9;
+  background-color: #f2f6fc;
+  padding-bottom: 0%;
+  padding: 1rem;
 
 }
 
 /* Let main content take available space */
+
+/* .header,
+.footer {
+  background-color: #dce9f5;
+} */
 
 .page-wrapper {
   min-height: 100vh;
@@ -67,7 +73,7 @@ body {
 .brand {
   font-weight: 600;
   font-size: 1.1rem;
-  color: #2c3e50;
+  color: #243447;
 }
 
 
@@ -82,7 +88,7 @@ body {
 
 .hamburger span {
   height: 2px;
-  background-color: black;
+  background-color: #243447;
   width: 100%;
   border-radius: 1px;
 }
@@ -93,7 +99,7 @@ body {
   right: -350px;
   width: 350px;
   height: 100vh;
-  background-color: #dceff9;
+  background-color: #e1edf9;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   padding-top: 6rem;
   transition: right 0.3s ease;
@@ -112,7 +118,7 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   cursor: pointer;
-  color: black;
+  color: #243447;
 
 }
 
@@ -129,7 +135,7 @@ body {
 }
 
 .sidebar li a {
-  color: black;
+  color: #243447;
   text-decoration: none;
 }
 
@@ -153,7 +159,7 @@ hr {
 .section-title {
   font-family: "Karla", sans-serif;
   font-size:5rem;
-  color: #333;
+  color: #243447;
   margin-top: -1rem;
   margin-bottom: 2rem;
 }
@@ -173,7 +179,7 @@ hr {
 
 .upload-btn {
   padding: 0.8rem 2rem;
-  background-color: #1a2020;
+  background-color: #243447;
   color: white;
   border: none;
   font-size: 1rem;
@@ -217,8 +223,9 @@ hr {
 .footer {
   background-color: #eaf4f9;
   font-family: "Poppins", sans-serif;
-  padding-bottom: 1rem;
   padding-top: 1rem;
+  position: sticky;
+  bottom: 0;
   max-width: 1800px;
   }
 
@@ -255,5 +262,140 @@ hr {
 }
 
 .footer-links a:hover {
-  color: #0077b6;
+  color: #0088cc;
+}
+
+
+
+
+
+.bubble-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 40px;
+  background: rgba(72, 202, 228, 0.2);
+  border-radius: 50%;
+  animation: floatBubbles 20s linear infinite;
+}
+
+.bubble:nth-child(1) {
+  left: 10%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 25s;
+}
+
+.bubble:nth-child(2) {
+  left: 20%;
+  width: 50px;
+  height: 50px;
+  animation-duration: 18s;
+}
+
+.bubble:nth-child(3) {
+  left: 35%;
+  width: 20px;
+  height: 20px;
+  animation-duration: 22s;
+}
+
+.bubble:nth-child(4) {
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  animation-duration: 30s;
+}
+
+.bubble:nth-child(5) {
+  left: 65%;
+  width: 25px;
+  height: 25px;
+  animation-duration: 26s;
+}
+
+.bubble:nth-child(6) {
+  left: 75%;
+  width: 35px;
+  height: 35px;
+  animation-duration: 17s;
+}
+
+.bubble:nth-child(7) {
+  left: 85%;
+  width: 45px;
+  height: 45px;
+  animation-duration: 19s;
+}
+
+.bubble:nth-child(8) {
+  left: 5%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 24s;
+}
+
+.bubble:nth-child(9) {
+  left: 90%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 21s;
+}
+
+.bubble:nth-child(10) {
+  left: 40%;
+  width: 55px;
+  height: 55px;
+  animation-duration: 28s;
+}
+
+@keyframes floatBubbles {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-1200px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+.background-image {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+              url('myriam-zilles-Ep941iDLwhk-unsplash.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.background-animation {
+  position: relative;
+  z-index: 2;
+}
+
+/* Optional: ensure main content sits above background and bubbles */
+.header,
+.container,
+.footer {
+  position: relative;
+  z-index: 10;
 }

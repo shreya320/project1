@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CoughSense</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
     <header class="header">
         <div class="navbar">
             <a href="#" class="logo-group">
-                <img src="img.png" alt="logo" class="logo" />
+                <img src="{{ url_for('static', filename='img.png') }}" alt="logo" class="logo" />
                 <span class="brand">CoughSense</span>
             </a>
             <div class="nav-center">Explore</div>
@@ -45,7 +45,7 @@
             <h1 class="barcode-title">ANALYZE YOUR COUGH</h1>
             <div class="analyze-content">
                 <p>Get personalized cough analyses tailored to your needs.</p>
-                <a href="#" class="get-started">Get Started</a>
+                <a href="/tool" class="get-started">Get Started</a>
             </div>
         </section>
 
@@ -54,7 +54,9 @@
             <div class="subtitle-container">
                 <p class="subtitle">Smart Cough Detection & Health Insights</p>
                 </br>
-                <p class="description">CoughSense leverages advanced audio analysis and machine learning to identify patterns in cough sounds, drawing insights from COVID-related data. Designed to promote awareness, support education, and enhance understanding of respiratory health.</p>
+                <p class="description">CoughSense leverages advanced audio analysis and machine learning to identify
+                    patterns in cough sounds, drawing insights from COVID-related data. Designed to promote awareness,
+                    support education, and enhance understanding of respiratory health.</p>
             </div>
         </section>
 
